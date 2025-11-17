@@ -12,9 +12,15 @@ class Pet extends Model
     protected $fillable = [
         'owner_id',
         'name',
+        'registration_code',
         'species',
         'age',
         'weight'
+    ];
+
+    protected $casts = [
+        'age' => 'integer',
+        'weight' => 'decimal:2',
     ];
 
     public function owner()
