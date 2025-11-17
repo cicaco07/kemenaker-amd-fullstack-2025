@@ -36,7 +36,6 @@
                         @enderror
                     </div>
 
-                    {{-- Input Data Hewan --}}
                     <div class="mb-3">
                         <label class="form-label">Data Hewan <span class="text-danger">*</span></label>
                         <input type="text"

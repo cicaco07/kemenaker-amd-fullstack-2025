@@ -1,11 +1,9 @@
-{{-- resources/views/dashboard.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Dashboard - Klinik Hewan')
 @section('header', 'Dashboard')
 
 @section('content')
-<!-- Statistics Cards -->
 <div class="row mb-4">
     <div class="col-md-3 mb-3">
         <div class="card stat-card">
@@ -70,7 +68,6 @@
 </div>
 
 <div class="row">
-    <!-- Recent Checkups -->
     <div class="col-md-7 mb-4">
         <div class="card">
             <div class="card-header bg-white">
@@ -118,7 +115,6 @@
         </div>
     </div>
 
-    <!-- Popular Treatments -->
     <div class="col-md-5 mb-4">
         <div class="card">
             <div class="card-header bg-white">
@@ -148,7 +144,6 @@
     </div>
 </div>
 
-<!-- Quick Actions -->
 <div class="row">
     <div class="col-12">
         <div class="card">

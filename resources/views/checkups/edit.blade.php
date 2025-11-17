@@ -17,7 +17,6 @@
                     @method('PUT')
 
                     <div class="row">
-                        {{-- Pilih Hewan --}}
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Pilih Hewan <span class="text-danger">*</span></label>
                             <select name="pet_id" id="petSelect"
@@ -39,7 +38,6 @@
                             @enderror
                         </div>
 
-                        {{-- Tanggal Pemeriksaan --}}
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Tanggal Pemeriksaan <span class="text-danger">*</span></label>
                             <input type="date" name="checkup_date"
@@ -52,7 +50,6 @@
                         </div>
                     </div>
 
-                    {{-- Info Hewan --}}
                     <div id="petInfo" class="alert alert-info" style="display: none;">
                         <strong><i class="bi bi-info-circle"></i> Info Hewan:</strong>
                         <div class="mt-2">
@@ -63,7 +60,6 @@
                         </div>
                     </div>
 
-                    {{-- Treatment --}}
                     <div class="mb-3">
                         <label class="form-label">Jenis Perawatan/Treatment <span class="text-danger">*</span></label>
                         <select name="treatment_id"
@@ -86,7 +82,6 @@
                         @enderror
                     </div>
 
-                    {{-- Diagnosis --}}
                     <div class="mb-3">
                         <label class="form-label">Diagnosis Dokter</label>
                         <textarea name="diagnosis"
@@ -98,7 +93,6 @@
                     </div>
 
                     <div class="row">
-                        {{-- Berat --}}
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Berat Saat Ini (kg)</label>
                             <input type="number" name="weight" step="0.01"
@@ -109,7 +103,6 @@
                             @enderror
                         </div>
 
-                        {{-- Suhu --}}
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Suhu Tubuh (°C)</label>
                             <input type="number" name="temperature" step="0.1"
@@ -135,7 +128,6 @@
         </div>
     </div>
 
-    {{-- Sidebar --}}
     <div class="col-md-4">
         <div class="card">
             <div class="card-header bg-info text-white">
@@ -177,7 +169,6 @@ document.getElementById('petSelect').addEventListener('change', function() {
     }
 });
 
-// Auto-fill saat halaman dibuka
 window.addEventListener('DOMContentLoaded', function() {
     const petSelect = document.getElementById('petSelect');
     if (petSelect.value) {

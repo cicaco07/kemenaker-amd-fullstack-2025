@@ -19,16 +19,14 @@ class CheckupController extends Controller
 
     public function create()
     {
-        // Ambil semua hewan yang terdaftar
         $pets = Pet::with('owner')
             ->orderBy('name')
             ->get();
 
-        // Ambil semua treatment yang tersedia
         $treatments = Treatment::orderBy('type')
             ->orderBy('name')
             ->get()
-            ->groupBy('type'); // Group by type untuk tampilan lebih rapi
+            ->groupBy('type');
 
         if ($pets->isEmpty()) {
             return redirect()->route('pets.index')
@@ -72,7 +70,6 @@ class CheckupController extends Controller
     {
         $checkup->load(['pet.owner', 'treatment']);
 
-        // Ambil riwayat checkup lain dari hewan yang sama
         $otherCheckups = Checkup::where('pet_id', $checkup->pet_id)
             ->where('id', '!=', $checkup->id)
             ->orderBy('checkup_date', 'desc')

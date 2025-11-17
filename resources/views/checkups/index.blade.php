@@ -97,7 +97,6 @@
     </div>
 </div>
 
-<!-- Filter & Stats Card -->
 <div class="row mt-3">
     <div class="col-md-3">
         <div class="card text-center">

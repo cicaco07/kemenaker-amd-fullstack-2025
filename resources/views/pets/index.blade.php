@@ -1,4 +1,3 @@
-{{-- resources/views/pets/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Data Hewan')

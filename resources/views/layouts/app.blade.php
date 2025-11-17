@@ -53,7 +53,6 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
             <div class="col-md-2 p-0 sidebar">
                 <div class="p-4 text-center">
                     <h4 class="text-white mb-0"><i class="bi bi-hospital"></i> Klinik Hewan</h4>
@@ -74,7 +73,6 @@
                 </nav>
             </div>
 
-            <!-- Main Content -->
             <div class="col-md-10 p-4">
                 <!-- Header -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -84,7 +82,6 @@
                     </div>
                 </div>
 
-                <!-- Alert Messages -->
                 @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="bi bi-check-circle"></i> {{ session('success') }}
@@ -99,7 +96,6 @@
                 </div>
                 @endif
 
-                <!-- Content -->
                 @yield('content')
             </div>
         </div>

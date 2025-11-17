@@ -17,7 +17,6 @@
                 </div>
             </div>
             <div class="card-body">
-                {{-- Info Hewan --}}
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <h6 class="card-title"><i class="bi bi-heart-fill"></i> Informasi Hewan</h6>
@@ -72,7 +71,6 @@
 
                 <hr>
 
-                {{-- Detail Pemeriksaan --}}
                 <h6 class="mb-3"><i class="bi bi-clipboard-data"></i> Detail Pemeriksaan</h6>
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -151,7 +149,6 @@
                     </div>
                 </div>
 
-                {{-- Diagnosis --}}
                 @if($checkup->diagnosis)
                 <div class="mb-3">
                     <h6><i class="bi bi-prescription2"></i> Diagnosis</h6>
@@ -161,7 +158,6 @@
                 </div>
                 @endif
 
-                {{-- Catatan --}}
                 @if($checkup->notes)
                 <div class="mb-3">
                     <h6><i class="bi bi-journal-text"></i> Catatan Tambahan</h6>
@@ -171,7 +167,6 @@
                 </div>
                 @endif
 
-                {{-- Action Buttons --}}
                 <div class="d-flex gap-2 mt-4">
                     <a href="{{ route('checkups.edit', $checkup) }}" class="btn btn-warning">
                         <i class="bi bi-pencil"></i> Edit
@@ -192,9 +187,7 @@
         </div>
     </div>
 
-    {{-- Sidebar --}}
     <div class="col-md-4">
-        {{-- Riwayat Pemeriksaan Lain --}}
         <div class="card">
             <div class="card-header bg-white">
                 <h6 class="mb-0"><i class="bi bi-clock-history"></i> Riwayat Pemeriksaan Lain</h6>
@@ -226,7 +219,6 @@
             </div>
         </div>
 
-        {{-- Info Treatment --}}
         <div class="card mt-3">
             <div class="card-header bg-info text-white">
                 <h6 class="mb-0"><i class="bi bi-info-circle"></i> Info Treatment</h6>
@@ -244,7 +236,6 @@
             </div>
         </div>
 
-        {{-- Quick Action --}}
         <div class="card mt-3">
             <div class="card-header bg-success text-white">
                 <h6 class="mb-0"><i class="bi bi-lightning"></i> Aksi Cepat</h6>

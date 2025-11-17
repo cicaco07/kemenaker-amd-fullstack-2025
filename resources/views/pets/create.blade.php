@@ -1,4 +1,3 @@
-{{-- resources/views/pets/create.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Tambah Hewan')

@@ -1,4 +1,3 @@
-{{-- resources/views/owners/index.blade.php --}}
 @extends('layouts.app')
 
 @section('title', 'Data Pemilik')

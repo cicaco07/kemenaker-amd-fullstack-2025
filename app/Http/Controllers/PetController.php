@@ -35,7 +35,6 @@ class PetController extends Controller
         ]);
 
         try {
-            // Validasi owner terverifikasi
             $owner = Owner::findOrFail($request->owner_id);
             if ($owner->phone_verified !== true) {
                 throw ValidationException::withMessages([
@@ -43,21 +42,16 @@ class PetController extends Controller
                 ]);
             }
 
-            // Parse data hewan dari input teks
             $input = trim($request->pet_data);
             $parsedData = $this->parseInputData($input);
 
-            // Validasi duplikat
             if ($owner->hasPet($parsedData['name'], $parsedData['species'])) {
                 throw ValidationException::withMessages([
                     'pet_data' => "Pemilik ini sudah memiliki hewan bernama {$parsedData['name']} dengan jenis {$parsedData['species']}."
                 ]);
             }
 
-            // Generate kode registrasi unik
             $registrationCode = $this->generateRegistrationCode($request->owner_id);
-
-            // Simpan data hewan
             $pet = Pet::create([
                 'owner_id' => $request->owner_id,
                 'registration_code' => $registrationCode,
@@ -97,7 +91,6 @@ class PetController extends Controller
         ]);
 
         try {
-            // Validasi owner terverifikasi
             $owner = Owner::findOrFail($request->owner_id);
             if (!$owner->phone_verified) {
                 throw ValidationException::withMessages([
@@ -155,9 +148,8 @@ class PetController extends Controller
             throw new \Exception('Format input tidak valid. Format: NAMA JENIS USIA BERAT');
         }
 
-        // Ambil 4 bagian terakhir untuk usia dan berat
-        $weight = array_pop($parts); // Bagian terakhir = berat
-        $age = array_pop($parts);    // Bagian kedua terakhir = usia
+        $weight = array_pop($parts);
+        $age = array_pop($parts);
         $species = array_pop($parts);
         $name = implode(' ', $parts);
 
