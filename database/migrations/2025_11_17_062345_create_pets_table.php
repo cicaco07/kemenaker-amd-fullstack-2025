@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('owner_id')->constrained()->onDelete('cascade');
+            $table->string('registration_code')->unique();
             $table->string('name');
             $table->string('species');
             $table->integer('age');
             $table->decimal('weight', 5, 2);
             $table->softDeletes();
             $table->timestamps();
+
+            $table->unique(['owner_id', 'name', 'species'], 'unique_pet_per_owner');
         });
     }
 

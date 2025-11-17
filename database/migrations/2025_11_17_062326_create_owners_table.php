@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
+            $table->string('phone')->unique();
+            $table->boolean('phone_verified')->default(false);
             $table->string('email')->nullable();
             $table->text('address')->nullable();
             $table->softDeletes();
