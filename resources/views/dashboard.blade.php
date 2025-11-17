@@ -129,7 +129,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div>
                         <h6 class="mb-0">{{ $treatment->name }}</h6>
-                        <small class="text-muted">{{ $treatment->category }}</small>
+                        <small class="text-muted">{{ $treatment->type }}</small>
                     </div>
                     <div>
                         <span class="badge bg-success">{{ $treatment->checkups_count }} kali</span>
